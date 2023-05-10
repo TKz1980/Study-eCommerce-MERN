@@ -14,7 +14,7 @@ const ProfileScreen = ({ location, history }) => {
 
   const dispatch = useDispatch();
 
-  const userDetails = useSelector((state) => state.userDetails);
+  const userDetails = useSelector((state) => state.userDetail);
   const { loading, error, user } = userDetails;
 
   const userLogin = useSelector((state) => state.userLogin);
@@ -58,7 +58,7 @@ const ProfileScreen = ({ location, history }) => {
             <Form.Label>Name</Form.Label>
             <Form.Control
               type="name"
-              placeholder="Enter name"
+              placeholder="Enter Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
             ></Form.Control>
@@ -75,7 +75,7 @@ const ProfileScreen = ({ location, history }) => {
           </Form.Group>
 
           <Form.Group controlId="password">
-            <Form.Label>Password Address</Form.Label>
+            <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
               placeholder="Enter password"
