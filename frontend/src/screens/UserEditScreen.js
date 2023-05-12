@@ -6,11 +6,10 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
 import { getUserDetails, updateUser } from "../actions/userActions";
-import { USER_UPDATE_RESET } from "../constants/userConstants";
+import { USER_UPDATE_RESET } from "../constants/userConstans";
 
 const UserEditScreen = ({ match, history }) => {
   const userId = match.params.id;
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isAdmin, setIsAdmin] = useState(false);
@@ -40,7 +39,7 @@ const UserEditScreen = ({ match, history }) => {
         setIsAdmin(user.isAdmin);
       }
     }
-  }, [dispatch, history, userId, user, successUpdate]);
+  }, [dispatch, user, userId, successUpdate, history]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -66,7 +65,7 @@ const UserEditScreen = ({ match, history }) => {
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="name"
-                placeholder="Enter name"
+                placeholder="Enter Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></Form.Control>
@@ -81,7 +80,6 @@ const UserEditScreen = ({ match, history }) => {
                 onChange={(e) => setEmail(e.target.value)}
               ></Form.Control>
             </Form.Group>
-
             <Form.Group controlId="isadmin">
               <Form.Check
                 type="checkbox"
